@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ferrari</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,700i" rel="stylesheet">
+</head>
+<body>
+    <div id="header"><h1>Moje Ferrari</h1></div>
+    <div id="car">
+        <img src="images/ferrari.jpg" alt="Oops!">
+    </div>
+    <div id="rest">
+        <div id="parameters">
+            <h3>Parametry</h3>
+            <ul>
+                <li>Stan konta: <b id="money">10000</b><b> $</b></li>
+                <li>Ilość paliwa w baku: <b id="fuel1">50</b></li>
+                <li>Pojemność baku: <b id="maxfuel">100</b></li>
+                <li>Rok produkcji: <b>2015</b></li>
+                <li>Przebieg: <b id="mil">30000</b></li>
+                <li>Sprawność opon: <b id="tires">10</b>%</li>
+                <li>Stan techniczny pojazdu: <b id="overall">10</b>%</li>
+                <li>Maksymalna prędkość: <b>330 km/h</b></li>
+                <li>Spalanie (l/100km): <b>8</b></li>
+            </ul>
+        </div>
+        <div id="kontrolki">
+            <span style="font-weight:bold; text-align:center; font-size:18px;">Kontrolka stanu paliwa: </span><img id="paliwo" class="control" src="images/dystrybutor_GREEN.jpg" alt="greenLight"><br><br><br>
+            <span style="font-weight:bold; text-align:center; font-size:18px;">Kontrolka stanu technicznego:</span><img id="stan_tech" class="control" src="images/stan_tech_RED.jpg" alt="greenLight">          
+        </div>
+        <div class="interactive">
+            <input type="number" id="fuelNumber" value="10">
+            <button id="fuel_up_but">Zatankuj!</button>
+            <input type="number" id="driveNumber" value="50">
+            <button id="drive_but">Jedź!</button>
+            <input type="number" id="loanNumber" value="0">
+            <button id="loan_but">Pożycz $$$ </button><br>
+        </div>
+        <div class="interactive">
+                <button class="service_r">Serwisuj pojazd</button>
+                <button class="service_r">Ścigaj się!</button>
+                <br>
+                Wygrane wyścigi: <b id="r_won">0</b><br>
+                Wyścigi ogółem: <b id="r_total">0</b>
+        </div>
+    </div>
+    <div id="alerts"></div>
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/skrypcik.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+body{
+    background-color: #ede3e3;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+#header{
+    background-color: #8e8f91;
+    height: 65px;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+#car{
+    float: left;
+    width:50%;
+    margin-right: 5%;
+}
+
+#car img{
+    margin-left: 4%;
+    height:450px;
+    border: solid;
+}
+#rest{
+    background-color:#a4a7ad;
+    float: left;
+    width:40%;
+    height: 450px;
+    border: solid;
+}
+
+#parameters{
+    font-size: 20px;
+    width: 60%;
+    float: left;
+}
+
+#kontrolki{
+    float: left;
+    width:40%;
+}
+
+.interactive{
+    margin-top: 5%;
+    float: left;
+    width: 50%;
+}
+
+input{
+    width:26%;
+    margin-left: 5%;
+}
+
+button{
+    width:40%;
+    height: 40%;
+    background-color: #f4dede;
+    border-radius: 15%;
+    margin:1%;
+}
+
+.service_r{
+    float: left;
+    height: 45px;
+    width: 80px;
+    border-radius: 100%;
+    margin-top:5%;
+}
+
+.control{
+    display: block;
+    width:40%;
+    margin: auto;
+
+}
+
+#alerts{
+    clear: both;
+    float:right;
+    width:38%;
+    height: 70px;
+    margin-right: 4.6%;
+    border: solid black;
+    background-color: #dadde2;
+    font-weight: bold;
+    font-size:1.2em;
+    padding-left:1%;
+    padding-right:1%
+}

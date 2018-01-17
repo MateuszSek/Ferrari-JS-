@@ -1,10 +1,3 @@
-var main = function(){
-    //eventListeners for buttons
-    $("#fuel_up_but").on('click', function(){fuel_up(ferrari,parseInt($("#fuelNumber").val()));});
-    $("#drive_but").on('click', function(){drive(ferrari,parseInt($("#driveNumber").val()));});
-    $("#loan_but").on('click', function(){ loan(ferrari,parseInt($("#loanNumber").val()));});
-    $(".service_r:last").on('click', function() {race(ferrari);});
-    $(".service_r:first").on('click', function() {service_car(ferrari);});
     var ferrari = { //obiect parameters
         money: 10000,
         car_name:"Ferrari",
@@ -20,9 +13,8 @@ var main = function(){
         light_overall: false,
         races_total:0,
         races_won:0,
-    } 
-
-    drive= function(car,kilometers){
+    }; 
+    var drive= function(car,kilometers){
         if (kilometers>0){
             if(car.fuel>=car.fuel_consumption*kilometers/100 && car.tire_condition>kilometers/50 &&car.overall_condition>kilometers/50){ //checking car condition and fuel
                 car.fuel-=(car.fuel_consumption*kilometers/100);
@@ -41,9 +33,9 @@ var main = function(){
             else $("#alerts").text('Masz za mało paliwa w baku lub zbyt poturbowany samochód. Dotankuj lub napraw samochód!');
         }
         else $("#alerts").text('Wpisz poprawną (dodatnią) liczbę kilometrów!');
-    }
+    };
 
-    fuel_up = function(car, liters){
+    var fuel_up = function(car, liters){
         if (liters>0){
             if (car.fuel+liters <= car.max_fuel && car.money-(liters*5)>=0){ //checking if user have money and a space in a container
                 car.fuel+=liters;
@@ -56,18 +48,19 @@ var main = function(){
             else $("#alerts").text("Nie możesz zatankować tej ilości benzyny. Nie masz wystarczająco $$ lub miejsca w baku.");
         }
         else $("#alerts").text('Wpisz poprawną (dodatnią) liczbę litrów do zatankowania!');
-    },
+    };
 
-    loan = function(car,cash){
+    var loan = function(car,cash){
         if (cash>0){
             car.money+=cash;
             $("#money").text(car.money);
             $("#alerts").text('Wziąłeś '+cash+'$ pożyczki. Lepiej spłać ją jak najszybciej!');
         }
         else $("#alerts").text('Wpisz poprawną kwotę pożyczki.');
-    }
+    };
 
-    race = function(car){
+
+    var race = function(car){
         if (car.money<1000) $("#alerts").text('Wpisowe to 1000$. Nie masz tyle ;/')
         else{
             let x=Math.floor(Math.random()*6)+1;
@@ -97,9 +90,9 @@ var main = function(){
             $("#r_total").text(car.races_total);
             $("#r_won").text(car.races_won);
         }
-    }
+    };
 
-    service_car = function(car){
+    var service_car = function(car){
         if (car.money>=1000){
             car.money-=1000;
             if (car.tire_condition<=80) car.tire_condition+=20;
@@ -112,6 +105,14 @@ var main = function(){
             if (car.overall_condition>=20) $("#stan_tech").attr("src","images/stan_tech_GREEN.jpg");
         }
         else $("#alerts").text('Serwis kosztuje 1000$. Nie ma wystarczająco kasy!');
-    }
+    };
+
+var main = function(){
+    //eventListeners for buttons
+    $("#fuel_up_but").on('click', function(){fuel_up(ferrari,parseInt($("#fuelNumber").val()));});
+    $("#drive_but").on('click', function(){drive(ferrari,parseInt($("#driveNumber").val()));});
+    $("#loan_but").on('click', function(){ loan(ferrari,parseInt($("#loanNumber").val()));});
+    $(".service_r:last").on('click', function() {race(ferrari);});
+    $(".service_r:first").on('click', function() {service_car(ferrari);});
 }
 $(document).ready(main);
